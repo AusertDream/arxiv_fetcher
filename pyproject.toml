@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arxiv-rag-fetcher"
+version = "1.3.1"
+description = "arXiv AI/LLM论文智能检索系统 - 自动获取、存储和搜索人工智能领域的最新学术论文"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Ausert", email = "ausertdream@gmail.com"}
+]
+keywords = ["arxiv", "rag", "ai", "llm", "paper", "search", "retrieval", "chroma", "embedding"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "arxiv>=2.1.0,<3.0.0",
+    "chromadb>=1.4.0,<2.0.0",
+    "sentence-transformers>=5.0.0,<6.0.0",
+    "torch>=2.0.0,<3.0.0",
+    "omegaconf>=2.3.0,<3.0.0",
+    "pyyaml>=6.0.0,<7.0.0",
+    "Flask>=3.0.0,<4.0.0",
+    "flask-restx>=1.3.0,<2.0.0",
+    "werkzeug>=3.0.0,<4.0.0",
+    "tqdm>=4.65.0,<5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0,<9.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+prod = [
+    "gunicorn>=23.0.0,<24.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/AusertDream/arxiv-rag-fetcher"
+Repository = "https://github.com/AusertDream/arxiv-rag-fetcher"
+Issues = "https://github.com/AusertDream/arxiv-rag-fetcher/issues"
+Documentation = "https://github.com/AusertDream/arxiv-rag-fetcher#readme"
+
+[project.scripts]
+arxiv-builder = "scripts.run_builder:main"
+arxiv-api = "scripts.run_api:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "scripts*"]
+exclude = ["tests*", "logs*", "data*", "chromadb_data*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true

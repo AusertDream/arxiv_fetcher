@@ -1,0 +1,50 @@
+# arXiv RAG System Configuration
+
+# Database settings
+database:
+  path: /data2/jty/myAgent/chromadb_data
+  collection_name: ArxivPapers_BGE-M3
+
+# CSV storage settings
+storage:
+  csv_path: /data2/jty/myAgent/data
+  init_filename: init_data.csv
+  daily_dir: daily
+
+# Embedding model settings
+embedding:
+  model_path: /data2/jty/models/embedding_models/bge-m3
+  device: cuda:3
+  normalize: true
+  batch_size: 32
+
+# arXiv fetching settings
+arxiv:
+  time_filter:
+    enabled: true # if disabled, default to fetch papers from last 2 days
+    mode: years
+    value: 2
+  max_results: -1  # Maximum papers to fetch. Use -1 for unlimited (all matching papers)
+  batch_size: 50
+  fetch_interval: 3.0  # Delay in seconds between batches (supports float, e.g., 0.5, 1.5). Set to 0 to disable
+  batch_threshold_days: 1.0  # Stop batching when earliest date is within this many days of start_date
+  retry_max_attempts: 3  # Maximum retry attempts for HTTP 429 errors
+  retry_base_sleep: 5.0  # Base sleep time in seconds for exponential backoff (5s -> 10s -> 20s)
+
+# Search API settings
+search:
+  default_top_k: 10
+  max_top_k: 50
+  title_weight: 1.0
+  abstract_weight: 1.0
+
+# Flask API settings
+api:
+  host: 0.0.0.0
+  port: 5001
+  debug: false
+
+# Logging settings
+logging:
+  level: INFO
+  file: logs/api.log

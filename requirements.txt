@@ -1,0 +1,28 @@
+# arXiv 爬虫
+arxiv==2.1.3
+
+# 向量数据库
+chromadb==1.4.0
+
+# 嵌入模型
+sentence-transformers==5.2.0
+torch==2.9.1
+
+# 配置管理
+omegaconf==2.3.0
+pyyaml==6.0.2
+
+# API 框架
+Flask==3.1.2
+flask-restx==1.3.0
+werkzeug
+
+# 工具库
+tqdm==4.67.1
+
+# 可选：生产服务器
+gunicorn==23.0.0
+
+# 开发测试
+pytest==8.3.4
+requests==2.32.3
