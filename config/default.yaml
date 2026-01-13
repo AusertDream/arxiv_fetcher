@@ -2,18 +2,18 @@
 
 # Database settings
 database:
-  path: /data2/jty/myAgent/chromadb_data
+  path: /path/to/chromadb_data
   collection_name: ArxivPapers_BGE-M3
 
 # CSV storage settings
 storage:
-  csv_path: /data2/jty/myAgent/data
+  csv_path: /path/to/data
   init_filename: init_data.csv
   daily_dir: daily
 
 # Embedding model settings
 embedding:
-  model_path: /data2/jty/models/embedding_models/bge-m3
+  model_path: /path/to/embedding_models/bge-m3
   device: cuda:3
   normalize: true
   batch_size: 32
