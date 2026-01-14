@@ -47,7 +47,7 @@ arXiv AI/LLM 论文智能检索系统 - 自动获取、存储和搜索人工智�
 - **字段**: ID、标题、摘要、作者、发布日期、URL
 
 ### 下载地址
-- **ModelScope**: [arxiv-ai-papers](https://modelscope.cn/datasets/YOUR_USERNAME/arxiv-ai-papers)
+- **ModelScope**: [arxiv-ai-papers](https://modelscope.cn/datasets/ausertdream/arxiv-ai-papers)
 
 ### 使用下载的数据
 
