@@ -1,8 +1,7 @@
 # arXiv Fetcher
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/arxiv-rag-fetcher?style=social)](https://github.com/YOUR_USERNAME/arxiv-rag-fetcher)
+[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/)
 
 English | [简体中文](README.md)
 
