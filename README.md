@@ -1,11 +1,11 @@
-# arXiv RAG Fetcher
+# arXiv Fetcher
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
 [English](README_EN.md) | 简体中文
 
-arXiv AI/LLM 论文智能检索系统 - 自动获取、存储和搜索人工智能领域的最新学术论文。
+arXiv AI/LLM 论文智能检索系统 - 自动获取、存储和搜索人工智能领域的最新学术论文。通过arxiv官方python api进行论文数据的获取，通过chromadb存储摘要和标题的向量数据，通过chromadb query接口进行相似度的检索。从而从零开始实现基于相似度的论文检索功能。
 
 ## 目录
 
